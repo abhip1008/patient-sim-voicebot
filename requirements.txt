@@ -1,11 +1,14 @@
-# Core — finalized in Phase 1 (exact Pipecat extras confirmed against current version then)
-pipecat-ai
+# Pipecat with the service extras we use:
+#   deepgram = STT, openai = patient LLM, cartesia = TTS, silero = VAD
+pipecat-ai[deepgram,openai,cartesia,silero]==1.4.0
+
+# Web server hosting the TwiML route + Twilio Media Stream WebSocket
 fastapi
 uvicorn[standard]
+
+# Twilio REST SDK (places the outbound call)
 twilio
+
+# Config + audio post-processing
 python-dotenv
 pydub
-
-# Service SDKs are pulled in via Pipecat extras (Deepgram STT, OpenAI LLM, Cartesia TTS).
-# Phase 1 will pin the exact extras syntax, e.g.:
-#   pipecat-ai[deepgram,openai,cartesia,silero]
