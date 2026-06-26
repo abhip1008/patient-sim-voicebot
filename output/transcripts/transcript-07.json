@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "scenario": "multi_constraint",
+    "title": "Multi-constraint booking",
+    "call_sid": "CA889d16d7b27266c6f98695adf3bb2af6",
+    "turns": 14
+  },
+  "turns": [
+    {
+      "t_seconds": 3.19,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.85,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "Hi, no, this is Dana White. I'm calling to book an appointment."
+    },
+    {
+      "t_seconds": 26.87,
+      "mmss": "00:26",
+      "speaker": "AGENT",
+      "text": "Please provide the full name and date of birth of the patient you'd like to book the appointment for."
+    },
+    {
+      "t_seconds": 28.04,
+      "mmss": "00:28",
+      "speaker": "PATIENT",
+      "text": "Sure, it's for me, Dana White. My date of birth is May 5th, 1995."
+    },
+    {
+      "t_seconds": 38.9,
+      "mmss": "00:38",
+      "speaker": "AGENT",
+      "text": "Just to confirm, I have your name as Dana White, and your date of birth as 05/05/1995. Is that correct? If so, could you please spell your first and last name for me?"
+    },
+    {
+      "t_seconds": 49.91,
+      "mmss": "00:49",
+      "speaker": "PATIENT",
+      "text": "Yes, that's correct. My first name is D-A-N-A, and my last name is W-H-I-T-E."
+    },
+    {
+      "t_seconds": 63.52,
+      "mmss": "01:03",
+      "speaker": "AGENT",
+      "text": "Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again instead. Which would you prefer?"
+    },
+    {
+      "t_seconds": 76.79,
+      "mmss": "01:16",
+      "speaker": "PATIENT",
+      "text": "Let's use my name and date of birth, please."
+    },
+    {
+      "t_seconds": 85.75,
+      "mmss": "01:25",
+      "speaker": "AGENT",
+      "text": "No problem. Just to be sure, your first name is spelled d a n a Your last name is w h I t e. Your date of birth is 05/05/1995. Is that all correct?"
+    },
+    {
+      "t_seconds": 97.24,
+      "mmss": "01:37",
+      "speaker": "PATIENT",
+      "text": "Yes, that's all correct."
+    },
+    {
+      "t_seconds": 107.61,
+      "mmss": "01:47",
+      "speaker": "AGENT",
+      "text": "I can't book an appointment right now, but I can connect you to our patient support team for help. Please stay on the line. Connecting you to a representative. Please wait."
+    },
+    {
+      "t_seconds": 114.44,
+      "mmss": "01:54",
+      "speaker": "PATIENT",
+      "text": "Could you handle the appointment for me directly? I need to book a morning slot with Dr. Smith next week, but not on Tuesday."
+    },
+    {
+      "t_seconds": 117.5,
+      "mmss": "01:57",
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "t_seconds": 122.28,
+      "mmss": "02:02",
+      "speaker": "PATIENT",
+      "text": "Goodbye!"
+    }
+  ]
+}

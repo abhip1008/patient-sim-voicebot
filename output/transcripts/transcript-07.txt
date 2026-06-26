@@ -1,0 +1,20 @@
+# Transcript: transcript-CA889d16d7b27266c6f98695adf3bb2af6
+# scenario: multi_constraint
+# title: Multi-constraint booking
+# call_sid: CA889d16d7b27266c6f98695adf3bb2af6
+# turns: 14
+
+[00:03] AGENT: May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?
+[00:12] PATIENT: Hi, no, this is Dana White. I'm calling to book an appointment.
+[00:26] AGENT: Please provide the full name and date of birth of the patient you'd like to book the appointment for.
+[00:28] PATIENT: Sure, it's for me, Dana White. My date of birth is May 5th, 1995.
+[00:38] AGENT: Just to confirm, I have your name as Dana White, and your date of birth as 05/05/1995. Is that correct? If so, could you please spell your first and last name for me?
+[00:49] PATIENT: Yes, that's correct. My first name is D-A-N-A, and my last name is W-H-I-T-E.
+[01:03] AGENT: Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again instead. Which would you prefer?
+[01:16] PATIENT: Let's use my name and date of birth, please.
+[01:25] AGENT: No problem. Just to be sure, your first name is spelled d a n a Your last name is w h I t e. Your date of birth is 05/05/1995. Is that all correct?
+[01:37] PATIENT: Yes, that's all correct.
+[01:47] AGENT: I can't book an appointment right now, but I can connect you to our patient support team for help. Please stay on the line. Connecting you to a representative. Please wait.
+[01:54] PATIENT: Could you handle the appointment for me directly? I need to book a morning slot with Dr. Smith next week, but not on Tuesday.
+[01:57] AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:02] PATIENT: Goodbye!

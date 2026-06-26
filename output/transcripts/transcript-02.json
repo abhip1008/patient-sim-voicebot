@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "scenario": "closed_day_trap",
+    "title": "Closed-day trap",
+    "call_sid": "CA333e57257e4cc42dbc6b3c8b16f67804",
+    "turns": 18
+  },
+  "turns": [
+    {
+      "t_seconds": 3.12,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.49,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "Yes, this is Alex Johnson. I'm calling to book an appointment, please."
+    },
+    {
+      "t_seconds": 18.17,
+      "mmss": "00:18",
+      "speaker": "AGENT",
+      "text": "Please provide your date of birth."
+    },
+    {
+      "t_seconds": 19.6,
+      "mmss": "00:19",
+      "speaker": "PATIENT",
+      "text": "Sure, it's July 4th, 1990."
+    },
+    {
+      "t_seconds": 28.53,
+      "mmss": "00:28",
+      "speaker": "AGENT",
+      "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. Can I help you today?"
+    },
+    {
+      "t_seconds": 31.67,
+      "mmss": "00:31",
+      "speaker": "PATIENT",
+      "text": "Yes, I'd like to book an appointment for this Sunday, please."
+    },
+    {
+      "t_seconds": 40.35,
+      "mmss": "00:40",
+      "speaker": "AGENT",
+      "text": "We're closed on Sundays, but I can help you find an appointment for another day. Would you like to look at openings early next week or later in the week?"
+    },
+    {
+      "t_seconds": 45.96,
+      "mmss": "00:45",
+      "speaker": "PATIENT",
+      "text": "Oh, I really need it to be this Sunday. Could you check if there's any way to work that out? Maybe an exception?"
+    },
+    {
+      "t_seconds": 58.38,
+      "mmss": "00:58",
+      "speaker": "AGENT",
+      "text": "We aren't able to offer appointments on Sundays, even my exception. Would you like to see the earliest available slot next week?"
+    },
+    {
+      "t_seconds": 64.28,
+      "mmss": "01:04",
+      "speaker": "PATIENT",
+      "text": "So Sunday is completely out of the question? Are there no options at all?"
+    },
+    {
+      "t_seconds": 73.69,
+      "mmss": "01:13",
+      "speaker": "AGENT",
+      "text": "That's right. Sunday appointments aren't available at Pivot Point Orthopedics. The clinic is closed that day, I can help you find the soonest opening on Monday or another weekday if you'd like."
+    },
+    {
+      "t_seconds": 82.8,
+      "mmss": "01:22",
+      "speaker": "PATIENT",
+      "text": "Alright, I understand. Let's try for the earliest available slot on Monday then. Can you check that for me?"
+    },
+    {
+      "t_seconds": 92.24,
+      "mmss": "01:32",
+      "speaker": "AGENT",
+      "text": "Can you tell me the reason for your visit? For example, is this for an urgent concern, a routine checkup, or something else?"
+    },
+    {
+      "t_seconds": 99.93,
+      "mmss": "01:39",
+      "speaker": "PATIENT",
+      "text": "It's more of a routine check-up. Could you let me know the earliest Monday slot, please?"
+    },
+    {
+      "t_seconds": 112.25,
+      "mmss": "01:52",
+      "speaker": "AGENT",
+      "text": "It looks like you already have a routine checkup appointment booked. If you want, I can help you reschedule or cancel it. Or I can connect you to live support for more help. Would you like to do?"
+    },
+    {
+      "t_seconds": 121.24,
+      "mmss": "02:01",
+      "speaker": "PATIENT",
+      "text": "I actually prefer to reschedule. Could you move it to the earliest available slot on Monday?"
+    },
+    {
+      "t_seconds": 132.13,
+      "mmss": "02:12",
+      "speaker": "AGENT",
+      "text": "Can't reschedule directly, but I can connect you to live support. So they can move your appointment to the earliest Monday slot. Would you like me to transfer you now?"
+    },
+    {
+      "t_seconds": 139.66,
+      "mmss": "02:19",
+      "speaker": "PATIENT",
+      "text": "Yes, please transfer me to live support so I can get that rescheduled. Thank you!"
+    }
+  ]
+}

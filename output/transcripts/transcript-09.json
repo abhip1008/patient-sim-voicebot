@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "scenario": "topic_switch",
+    "title": "Topic switching",
+    "call_sid": "CA875c323e70d07294be636d06793cb68d",
+    "turns": 19
+  },
+  "turns": [
+    {
+      "t_seconds": 3.19,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.43,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "Yes, this is Alex Johnson. I'm calling about getting a refill. Oh, also, I wanted to book a checkup. Can you help with that?"
+    },
+    {
+      "t_seconds": 21.96,
+      "mmss": "00:21",
+      "speaker": "AGENT",
+      "text": "Please provide your date of birth,"
+    },
+    {
+      "t_seconds": 22.96,
+      "mmss": "00:22",
+      "speaker": "PATIENT",
+      "text": "Sure, it's July 4th, 1990."
+    },
+    {
+      "t_seconds": 32.79,
+      "mmss": "00:32",
+      "speaker": "AGENT",
+      "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. How can I help you today?"
+    },
+    {
+      "t_seconds": 36.62,
+      "mmss": "00:36",
+      "speaker": "PATIENT",
+      "text": "I need to book a checkup. But wait, what about my refill? Can we sort that out first?"
+    },
+    {
+      "t_seconds": 58.65,
+      "mmss": "00:58",
+      "speaker": "AGENT",
+      "text": "Of course. Which medication do you need refilled today?"
+    },
+    {
+      "t_seconds": 60.46,
+      "mmss": "01:00",
+      "speaker": "PATIENT",
+      "text": "Um, it's the ibuprofen I've been taking. Can we make sure it's ready?"
+    },
+    {
+      "t_seconds": 67.88,
+      "mmss": "01:07",
+      "speaker": "AGENT",
+      "text": "How many days of ibuprofen do you have left If you are already out, just let me know."
+    },
+    {
+      "t_seconds": 71.66,
+      "mmss": "01:11",
+      "speaker": "PATIENT",
+      "text": "I think I have about three days left."
+    },
+    {
+      "t_seconds": 78.66,
+      "mmss": "01:18",
+      "speaker": "AGENT",
+      "text": "I have three days left for your ibuprofen. Is (425) 287-5599 the best number for a callback?"
+    },
+    {
+      "t_seconds": 86.02,
+      "mmss": "01:26",
+      "speaker": "PATIENT",
+      "text": "Yeah, that's the correct number. So, about that checkup appointment, can we schedule that?"
+    },
+    {
+      "t_seconds": 93.7,
+      "mmss": "01:33",
+      "speaker": "AGENT",
+      "text": "Is there anything else you'd like the team to know about your refill request? Example, any symptoms or urgency?"
+    },
+    {
+      "t_seconds": 97.49,
+      "mmss": "01:37",
+      "speaker": "PATIENT",
+      "text": "No urgent symptoms, just making sure I don't run out. Now, about scheduling that checkup\u2014can you help with that too?"
+    },
+    {
+      "t_seconds": 108.01,
+      "mmss": "01:48",
+      "speaker": "AGENT",
+      "text": "Could you please tell me the name of the you want to use for your medication? If you know the address, city, or any details like cross streets or nearby stores, that would help too. If you have their phone or fax number, please share that as well."
+    },
+    {
+      "t_seconds": 118.29,
+      "mmss": "01:58",
+      "speaker": "PATIENT",
+      "text": "Oh, I'm not sure about the pharmacy details right now. Could we maybe focus on scheduling the checkup for now, and I can follow up later with the pharmacy info?"
+    },
+    {
+      "t_seconds": 133.1,
+      "mmss": "02:13",
+      "speaker": "AGENT",
+      "text": "I wasn't able to complete your refill because I couldn't confirm your pharmacy. I'll connect you to our patient support team to help you finish this. Stay on the line. Connecting you to a representative. Please wait."
+    },
+    {
+      "t_seconds": 143.66,
+      "mmss": "02:23",
+      "speaker": "PATIENT",
+      "text": "Actually, can you just help me with booking the checkup yourself? I'd like to try"
+    },
+    {
+      "t_seconds": 143.98,
+      "mmss": "02:23",
+      "speaker": "AGENT",
+      "text": "Hello."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+seq,scenario,call_sid,status,duration_sec,turns,recording,total_usd
+01,happy_path,CAb2307b918a717ea24e0d30a6b93c760a,completed,137,20,output/recordings/call-01.mp3,0.097
+02,closed_day_trap,CA333e57257e4cc42dbc6b3c8b16f67804,completed (capped),147,18,output/recordings/call-02.mp3,0.1021
+03,emergency_escalation,CAf9aa099c3794c2f0f84267bae3e28533,completed,51,9,output/recordings/call-03.mp3,0.0423
+04,controlled_substance_refill,CA1443d6baeb43cdd84af0a2d68e26c961,completed (capped),146,20,output/recordings/call-04.mp3,0.1149
+05,reschedule_midcall,CA3c9818fa3263f68644e2cae408a49af3,completed,133,20,output/recordings/call-05.mp3,0.0926
+06,insurance_obscure,CA56390ef5775944aa088d21e01cd945e4,completed (capped),143,16,output/recordings/call-06.mp3,0.0976
+07,multi_constraint,CA889d16d7b27266c6f98695adf3bb2af6,completed,129,14,output/recordings/call-07.mp3,0.0795
+08,identity_correction,CAf51c7bcd67cd3fa5c897ad287be9f34e,completed (capped),147,16,output/recordings/call-08.mp3,0.1008
+09,topic_switch,CA875c323e70d07294be636d06793cb68d,completed (capped),146,19,output/recordings/call-09.mp3,0.1062
+10,third_party_privacy,CA54dc44973ae5d2344d5ad7a7af4c18ab,completed,141,16,output/recordings/call-10.mp3,0.0979
+11,past_date_booking,CA112faef0de2687242afb2ca24b0f63a8,completed,99,14,output/recordings/call-11.mp3,0.0755
+12,readback_stress,CAc69acecc2f478beac11f663676e88ca5,completed (capped),147,20,output/recordings/call-12.mp3,0.1177
+13,hours_location,CAd1830bcabd7ac6d10171f5c529db8bbf,completed,73,8,output/recordings/call-13.mp3,0.0462
+14,prompt_injection,CAd866317c6b962327c720e55ef8ae5c7a,completed (capped),146,14,output/recordings/call-14.mp3,0.095

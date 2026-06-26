@@ -1,0 +1,22 @@
+# Transcript: transcript-CA56390ef5775944aa088d21e01cd945e4
+# scenario: insurance_obscure
+# title: Obscure insurance question
+# call_sid: CA56390ef5775944aa088d21e01cd945e4
+# turns: 16
+
+[00:03] AGENT: May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?
+[00:12] PATIENT: Actually, this is Grace Kim. I was calling to ask if you accept a specific insurance plan. Can you tell me if you accept Mountainview Mutual Gold PPO?
+[00:19] AGENT: Please provide the full and date of birth of the patient you're calling about.
+[00:22] PATIENT: Sure, it's Grace Kim, and my date of birth is April 17th, 1973.
+[00:36] AGENT: Just to confirm, I have your name as Grace Kim and your date of birth? As 04/17/1973. Is that correct? If so, could you please spell your first and last name for me?
+[00:43] PATIENT: Yes, that's correct. My first name is G-R-A-C-E and my last name is K-I-M.
+[00:57] AGENT: Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. You're not sure, just let me know, and I'll confirm your name and date of birth again.
+[01:09] PATIENT: I'm actually not looking to access my record right now. I just wanted to ask if you accept Mountainview Mutual Gold PPO insurance. Can you let me know about that?
+[01:24] AGENT: Pivot Point Orthopedics accepts most insurance plans. I'll check specifically about Mountain View Mutual Gold PPO for you. One moment.
+[01:30] PATIENT: Sure, I'll hold. I really need to know
+[01:34] AGENT: I'm unable to confirm insurance details without verifying your patient record. You like to speak with our support team for more information about your insurance?
+[01:39] PATIENT: Could you check for me directly? I'd really appreciate a clear yes or no on the Mountainview Mutual Gold PPO.
+[01:53] AGENT: I'm not able to confirm specific insurance plans about accessing your patient record. A clear answer about Mountain View Mutual Gold PPO, I recommend speaking with our support team. You like me to connect you now?
+[02:03] PATIENT: No, that's okay. You've been helpful. I'll reach out to the support team myself. Thanks for your time. Goodbye.
+[02:14] AGENT: You're welcome. You need anything else, just give us a call. Goodbye.
+[02:22] PATIENT: Will do, thanks. Goodbye.

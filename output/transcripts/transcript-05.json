@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "scenario": "reschedule_midcall",
+    "title": "Reschedule immediately after booking",
+    "call_sid": "CA3c9818fa3263f68644e2cae408a49af3",
+    "turns": 20
+  },
+  "turns": [
+    {
+      "t_seconds": 3.05,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "Be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Of Pretty Good AI. Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.92,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "Yes, this is Alex Johnson. I'd like to book a checkup, please."
+    },
+    {
+      "t_seconds": 21.31,
+      "mmss": "00:21",
+      "speaker": "AGENT",
+      "text": "Please provide your date of birth."
+    },
+    {
+      "t_seconds": 22.68,
+      "mmss": "00:22",
+      "speaker": "PATIENT",
+      "text": "Sure, it's July 4th, 1990."
+    },
+    {
+      "t_seconds": 31.04,
+      "mmss": "00:31",
+      "speaker": "AGENT",
+      "text": "Thanks, Alex. Just to confirm, you'd like to schedule a general checkup. Is that right?"
+    },
+    {
+      "t_seconds": 35.24,
+      "mmss": "00:35",
+      "speaker": "PATIENT",
+      "text": "Yes, that's correct."
+    },
+    {
+      "t_seconds": 42.96,
+      "mmss": "00:42",
+      "speaker": "AGENT",
+      "text": "Do you have a specific provider you'd like to see? Or are you open to any available provider?"
+    },
+    {
+      "t_seconds": 46.86,
+      "mmss": "00:46",
+      "speaker": "PATIENT",
+      "text": "I'm open to any available provider."
+    },
+    {
+      "t_seconds": 55.99,
+      "mmss": "00:55",
+      "speaker": "AGENT",
+      "text": "It looks like you already have a general checkup appointment booked. If you'd like, I can help you reschedule or cancel that appointment. What would you like to do?"
+    },
+    {
+      "t_seconds": 66.13,
+      "mmss": "01:06",
+      "speaker": "PATIENT",
+      "text": "Oh, I forgot about that. Let's just reschedule it to a different day."
+    },
+    {
+      "t_seconds": 72.17,
+      "mmss": "01:12",
+      "speaker": "AGENT",
+      "text": "No problem, Alex. You like to keep your current appointment reschedule it, or cancel it?"
+    },
+    {
+      "t_seconds": 77.89,
+      "mmss": "01:17",
+      "speaker": "PATIENT",
+      "text": "I'd like to reschedule it, please."
+    },
+    {
+      "t_seconds": 83.11,
+      "mmss": "01:23",
+      "speaker": "AGENT",
+      "text": "I can help with that. Do you have a preferred day or time of day for your new appointment?"
+    },
+    {
+      "t_seconds": 87.47,
+      "mmss": "01:27",
+      "speaker": "PATIENT",
+      "text": "Could we move it to next Monday, preferably in the morning?"
+    },
+    {
+      "t_seconds": 98.2,
+      "mmss": "01:38",
+      "speaker": "AGENT",
+      "text": "It looks like I'm unable to reschedule your checkup directly. I'll connect you with a team member who can help finish this for you. Please hold on a moment."
+    },
+    {
+      "t_seconds": 103.86,
+      "mmss": "01:43",
+      "speaker": "PATIENT",
+      "text": "Can you just take care of it for me? I'd prefer not to be transferred."
+    },
+    {
+      "t_seconds": 107.6,
+      "mmss": "01:47",
+      "speaker": "AGENT",
+      "text": "It looks like you need to reschedule your general checkup. But I can't do that directly. I'll connect you to our patient support team for help. Please stay on the line. Connecting you to a representative. Please wait."
+    },
+    {
+      "t_seconds": 118.36,
+      "mmss": "01:58",
+      "speaker": "PATIENT",
+      "text": "Alright, thank you."
+    },
+    {
+      "t_seconds": 121.22,
+      "mmss": "02:01",
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "t_seconds": 126.13,
+      "mmss": "02:06",
+      "speaker": "PATIENT",
+      "text": "Goodbye."
+    }
+  ]
+}

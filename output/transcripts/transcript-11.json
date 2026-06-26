@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "scenario": "past_date_booking",
+    "title": "Book an appointment in the past",
+    "call_sid": "CA112faef0de2687242afb2ca24b0f63a8",
+    "turns": 14
+  },
+  "turns": [
+    {
+      "t_seconds": 3.24,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "Be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI, Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.78,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "No, this is Tom Becker. I'm calling to book an appointment, please."
+    },
+    {
+      "t_seconds": 20.03,
+      "mmss": "00:20",
+      "speaker": "AGENT",
+      "text": "Wingstop. Are you calling to book this appointment for yourself? Or for someone else?"
+    },
+    {
+      "t_seconds": 26.09,
+      "mmss": "00:26",
+      "speaker": "PATIENT",
+      "text": "For myself. I was hoping to book it for yesterday. Can you help with that?"
+    },
+    {
+      "t_seconds": 31.42,
+      "mmss": "00:31",
+      "speaker": "AGENT",
+      "text": "Please provide your date of birth."
+    },
+    {
+      "t_seconds": 32.54,
+      "mmss": "00:32",
+      "speaker": "PATIENT",
+      "text": "Sure, it's December 11th, 1978. So, about the appointment for yesterday..."
+    },
+    {
+      "t_seconds": 45.19,
+      "mmss": "00:45",
+      "speaker": "AGENT",
+      "text": "Would you like me to look up your record using your phone number? If so, please tell me the number you have on file with us. If you're not sure, I can confirm your name and date of birth again instead."
+    },
+    {
+      "t_seconds": 56.59,
+      "mmss": "00:56",
+      "speaker": "PATIENT",
+      "text": "Let's go with the name and date of birth. It's Tom Becker, December 11th, 1978. About that appointment for yesterday, is it possible to book it?"
+    },
+    {
+      "t_seconds": 63.59,
+      "mmss": "01:03",
+      "speaker": "AGENT",
+      "text": "Please spell out your first and last name confirm your date of birth one more time."
+    },
+    {
+      "t_seconds": 66.24,
+      "mmss": "01:06",
+      "speaker": "PATIENT",
+      "text": "Sure thing, it's T-O-M B-E-C-K-E-R, and the date of birth is December 11th, 1978. Can you book that appointment for yesterday?"
+    },
+    {
+      "t_seconds": 82.46,
+      "mmss": "01:22",
+      "speaker": "AGENT",
+      "text": "I can't book your appointment right now, but I'll connect you to our patient support team for help. Please stay on the line. Connecting you to a representative. Please wait"
+    },
+    {
+      "t_seconds": 88.96,
+      "mmss": "01:28",
+      "speaker": "PATIENT",
+      "text": "Actually, could you please help me directly instead? I really need to sort this out."
+    },
+    {
+      "t_seconds": 89.59,
+      "mmss": "01:29",
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "t_seconds": 98.41,
+      "mmss": "01:38",
+      "speaker": "PATIENT",
+      "text": "Goodbye."
+    }
+  ]
+}

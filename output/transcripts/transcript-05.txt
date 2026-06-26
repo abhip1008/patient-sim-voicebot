@@ -1,0 +1,26 @@
+# Transcript: transcript-CA3c9818fa3263f68644e2cae408a49af3
+# scenario: reschedule_midcall
+# title: Reschedule immediately after booking
+# call_sid: CA3c9818fa3263f68644e2cae408a49af3
+# turns: 20
+
+[00:03] AGENT: Be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Of Pretty Good AI. Am I speaking with Alex?
+[00:12] PATIENT: Yes, this is Alex Johnson. I'd like to book a checkup, please.
+[00:21] AGENT: Please provide your date of birth.
+[00:22] PATIENT: Sure, it's July 4th, 1990.
+[00:31] AGENT: Thanks, Alex. Just to confirm, you'd like to schedule a general checkup. Is that right?
+[00:35] PATIENT: Yes, that's correct.
+[00:42] AGENT: Do you have a specific provider you'd like to see? Or are you open to any available provider?
+[00:46] PATIENT: I'm open to any available provider.
+[00:55] AGENT: It looks like you already have a general checkup appointment booked. If you'd like, I can help you reschedule or cancel that appointment. What would you like to do?
+[01:06] PATIENT: Oh, I forgot about that. Let's just reschedule it to a different day.
+[01:12] AGENT: No problem, Alex. You like to keep your current appointment reschedule it, or cancel it?
+[01:17] PATIENT: I'd like to reschedule it, please.
+[01:23] AGENT: I can help with that. Do you have a preferred day or time of day for your new appointment?
+[01:27] PATIENT: Could we move it to next Monday, preferably in the morning?
+[01:38] AGENT: It looks like I'm unable to reschedule your checkup directly. I'll connect you with a team member who can help finish this for you. Please hold on a moment.
+[01:43] PATIENT: Can you just take care of it for me? I'd prefer not to be transferred.
+[01:47] AGENT: It looks like you need to reschedule your general checkup. But I can't do that directly. I'll connect you to our patient support team for help. Please stay on the line. Connecting you to a representative. Please wait.
+[01:58] PATIENT: Alright, thank you.
+[02:01] AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:06] PATIENT: Goodbye.

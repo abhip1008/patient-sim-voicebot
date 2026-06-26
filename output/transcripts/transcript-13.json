@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "scenario": "hours_location",
+    "title": "Office hours & location question (baseline-ish)",
+    "call_sid": "CAd1830bcabd7ac6d10171f5c529db8bbf",
+    "turns": 8
+  },
+  "turns": [
+    {
+      "t_seconds": 3.19,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 13.12,
+      "mmss": "00:13",
+      "speaker": "PATIENT",
+      "text": "Hi, no, my name is Maria Alvarez. I wanted to find out your office hours and address, if you could help me with that."
+    },
+    {
+      "t_seconds": 25.37,
+      "mmss": "00:25",
+      "speaker": "AGENT",
+      "text": "Our clinic is open Monday through Friday with varying hours each day. Can also provide our full address. You like to hear the hours for each day or just our location?"
+    },
+    {
+      "t_seconds": 32.56,
+      "mmss": "00:32",
+      "speaker": "PATIENT",
+      "text": "I'd love to know both, if that's okay. Also, are you open on weekends?"
+    },
+    {
+      "t_seconds": 42.5,
+      "mmss": "00:42",
+      "speaker": "AGENT",
+      "text": "We are not open on weekends. Our clinic hours are Monday, Tuesday, and Thursday from 9AM to 4PM, Wednesday from 12PM to 7PM, and Friday from 9AM to 12PM. Our address is one two three four Recovery Way, suite two hundred, Austin, there anything else I can help you with?"
+    },
+    {
+      "t_seconds": 59.04,
+      "mmss": "00:59",
+      "speaker": "PATIENT",
+      "text": "No, that's all I needed to know. Thanks for your help! Goodbye."
+    },
+    {
+      "t_seconds": 65.89,
+      "mmss": "01:05",
+      "speaker": "AGENT",
+      "text": "You're welcome. A great day."
+    },
+    {
+      "t_seconds": 68.08,
+      "mmss": "01:08",
+      "speaker": "PATIENT",
+      "text": "You too, bye!"
+    }
+  ]
+}

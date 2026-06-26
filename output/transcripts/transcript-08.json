@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "scenario": "identity_correction",
+    "title": "Identity correction mid-call",
+    "call_sid": "CAf51c7bcd67cd3fa5c897ad287be9f34e",
+    "turns": 16
+  },
+  "turns": [
+    {
+      "t_seconds": 3.09,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Of Pretty Good AI. I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.34,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "Oh, sorry, no. This is James Carter. I was hoping to schedule an appointment."
+    },
+    {
+      "t_seconds": 25.41,
+      "mmss": "00:25",
+      "speaker": "AGENT",
+      "text": "Please provide the full name and date of birth of the patient you'd like to schedule for."
+    },
+    {
+      "t_seconds": 27.31,
+      "mmss": "00:27",
+      "speaker": "PATIENT",
+      "text": "Sure, the name is James Carter, and the date of birth is June 15th, 1998. Oh, apologies, I misspoke. It's actually June 15th, 1988. Now can we proceed with the scheduling?"
+    },
+    {
+      "t_seconds": 37.39,
+      "mmss": "00:37",
+      "speaker": "AGENT",
+      "text": "No problem. Please tell me the correct full name and date of birth."
+    },
+    {
+      "t_seconds": 41.59,
+      "mmss": "00:41",
+      "speaker": "PATIENT",
+      "text": "Of course, it's James Carter, and my date of birth is June 15th, 1988. Sorry about the mix-up! Can we go ahead with scheduling an appointment?"
+    },
+    {
+      "t_seconds": 54.37,
+      "mmss": "00:54",
+      "speaker": "AGENT",
+      "text": "Please confirm the correct full name and date of birth. For the patient. Would you like to use your phone number to help look up your record? If so, please tell me the number you have on file with us. You're not sure, just let me know. Make sure I have the right information. Please spell out your full name and date of birth."
+    },
+    {
+      "t_seconds": 79.29,
+      "mmss": "01:19",
+      "speaker": "PATIENT",
+      "text": "Certainly, it's James Carter, J-A-M-E-S C-A-R-T-E-R, and my date of birth is June 15th, 1988. Can we proceed with booking the appointment now?"
+    },
+    {
+      "t_seconds": 96.35,
+      "mmss": "01:36",
+      "speaker": "AGENT",
+      "text": "I can't proceed further right now, but I can make sure our clinic support team follows with you. You like me to connect you to our patient support team?"
+    },
+    {
+      "t_seconds": 101.1,
+      "mmss": "01:41",
+      "speaker": "PATIENT",
+      "text": "Could you handle the booking directly? I'm hoping to set up an appointment without needing a transfer."
+    },
+    {
+      "t_seconds": 110.42,
+      "mmss": "01:50",
+      "speaker": "AGENT",
+      "text": "I'm unable to book the appointment directly right now due to a system issue. I'll document your request to make sure our clinic support team follows up with you as soon as possible. Please hold while I update your request."
+    },
+    {
+      "t_seconds": 121.74,
+      "mmss": "02:01",
+      "speaker": "PATIENT",
+      "text": "Sure, thank you."
+    },
+    {
+      "t_seconds": 126.09,
+      "mmss": "02:06",
+      "speaker": "AGENT",
+      "text": "Since our support team is available now, I'll connect you to a patient support representative. Can help you schedule your appointment. Stay on the line. Connecting you to a representative. Please wait."
+    },
+    {
+      "t_seconds": 135.5,
+      "mmss": "02:15",
+      "speaker": "PATIENT",
+      "text": "Actually, if there's no direct way to handle it now, I'll try again later. Thanks for your help anyway. Goodbye!"
+    },
+    {
+      "t_seconds": 136.3,
+      "mmss": "02:16",
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "t_seconds": 140.41,
+      "mmss": "02:20",
+      "speaker": "PATIENT",
+      "text": "Goodbye, and thank you for your time."
+    }
+  ]
+}

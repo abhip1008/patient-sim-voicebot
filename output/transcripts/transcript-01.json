@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "scenario": "happy_path",
+    "title": "Happy-path booking (baseline)",
+    "call_sid": "CAb2307b918a717ea24e0d30a6b93c760a",
+    "turns": 20
+  },
+  "turns": [
+    {
+      "t_seconds": 3.15,
+      "mmss": "00:03",
+      "speaker": "AGENT",
+      "text": "May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?"
+    },
+    {
+      "t_seconds": 12.41,
+      "mmss": "00:12",
+      "speaker": "PATIENT",
+      "text": "Yes, this is Alex Johnson speaking."
+    },
+    {
+      "t_seconds": 20.02,
+      "mmss": "00:20",
+      "speaker": "AGENT",
+      "text": "Please provide your date of birth."
+    },
+    {
+      "t_seconds": 20.85,
+      "mmss": "00:20",
+      "speaker": "PATIENT",
+      "text": "Sure, it's July 4th, 1990."
+    },
+    {
+      "t_seconds": 29.19,
+      "mmss": "00:29",
+      "speaker": "AGENT",
+      "text": "The birthday doesn't match our records. But for demo purposes, I'll accept it. Can I help you today?"
+    },
+    {
+      "t_seconds": 34.99,
+      "mmss": "00:34",
+      "speaker": "PATIENT",
+      "text": "I'd like to book a routine checkup for next week. Any weekday morning would be great."
+    },
+    {
+      "t_seconds": 44.48,
+      "mmss": "00:44",
+      "speaker": "AGENT",
+      "text": "You'd like to schedule a general office for a routine checkup next week. Correct?"
+    },
+    {
+      "t_seconds": 45.59,
+      "mmss": "00:45",
+      "speaker": "PATIENT",
+      "text": "Yes, that's correct."
+    },
+    {
+      "t_seconds": 53.86,
+      "mmss": "00:53",
+      "speaker": "AGENT",
+      "text": "You have a preferred provider, or would you like to see the first available?"
+    },
+    {
+      "t_seconds": 55.13,
+      "mmss": "00:55",
+      "speaker": "PATIENT",
+      "text": "I'll go with the first available, please."
+    },
+    {
+      "t_seconds": 63.65,
+      "mmss": "01:03",
+      "speaker": "AGENT",
+      "text": "It looks like you already have a routine checkup scheduled. If you want to reschedule or cancel that appointment, I can help. Would you like to make a change to your existing appointment?"
+    },
+    {
+      "t_seconds": 74.82,
+      "mmss": "01:14",
+      "speaker": "PATIENT",
+      "text": "Oh, I must've forgotten. Can you remind me when it's scheduled for?"
+    },
+    {
+      "t_seconds": 83.73,
+      "mmss": "01:23",
+      "speaker": "AGENT",
+      "text": "I don't have access to your current appointment details. I recommend contacting the clinic directly for that information. Or I can transfer you to a live representative who can assist. Would you like to speak with someone from the office?"
+    },
+    {
+      "t_seconds": 94.36,
+      "mmss": "01:34",
+      "speaker": "PATIENT",
+      "text": "Yes, please transfer me to someone who can help. Thank you!"
+    },
+    {
+      "t_seconds": 103.37,
+      "mmss": "01:43",
+      "speaker": "AGENT",
+      "text": "I can connect you to our patient support team. However, I'm a pretty good AI. And can do many the things that operator can. Wanna give me a try?"
+    },
+    {
+      "t_seconds": 111.11,
+      "mmss": "01:51",
+      "speaker": "PATIENT",
+      "text": "I appreciate that, but I'd prefer to speak with someone from the office to check my appointment details. Could you connect me?"
+    },
+    {
+      "t_seconds": 120.31,
+      "mmss": "02:00",
+      "speaker": "AGENT",
+      "text": "Connecting you to a representative. Please wait."
+    },
+    {
+      "t_seconds": 123.63,
+      "mmss": "02:03",
+      "speaker": "PATIENT",
+      "text": "Thank you!"
+    },
+    {
+      "t_seconds": 127.11,
+      "mmss": "02:07",
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye."
+    },
+    {
+      "t_seconds": 129.12,
+      "mmss": "02:09",
+      "speaker": "PATIENT",
+      "text": "Goodbye, and thank you for your help!"
+    }
+  ]
+}

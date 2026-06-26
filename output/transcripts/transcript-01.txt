@@ -1,0 +1,26 @@
+# Transcript: transcript-CAb2307b918a717ea24e0d30a6b93c760a
+# scenario: happy_path
+# title: Happy-path booking (baseline)
+# call_sid: CAb2307b918a717ea24e0d30a6b93c760a
+# turns: 20
+
+[00:03] AGENT: May be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. Am I speaking with Alex?
+[00:12] PATIENT: Yes, this is Alex Johnson speaking.
+[00:20] AGENT: Please provide your date of birth.
+[00:20] PATIENT: Sure, it's July 4th, 1990.
+[00:29] AGENT: The birthday doesn't match our records. But for demo purposes, I'll accept it. Can I help you today?
+[00:34] PATIENT: I'd like to book a routine checkup for next week. Any weekday morning would be great.
+[00:44] AGENT: You'd like to schedule a general office for a routine checkup next week. Correct?
+[00:45] PATIENT: Yes, that's correct.
+[00:53] AGENT: You have a preferred provider, or would you like to see the first available?
+[00:55] PATIENT: I'll go with the first available, please.
+[01:03] AGENT: It looks like you already have a routine checkup scheduled. If you want to reschedule or cancel that appointment, I can help. Would you like to make a change to your existing appointment?
+[01:14] PATIENT: Oh, I must've forgotten. Can you remind me when it's scheduled for?
+[01:23] AGENT: I don't have access to your current appointment details. I recommend contacting the clinic directly for that information. Or I can transfer you to a live representative who can assist. Would you like to speak with someone from the office?
+[01:34] PATIENT: Yes, please transfer me to someone who can help. Thank you!
+[01:43] AGENT: I can connect you to our patient support team. However, I'm a pretty good AI. And can do many the things that operator can. Wanna give me a try?
+[01:51] PATIENT: I appreciate that, but I'd prefer to speak with someone from the office to check my appointment details. Could you connect me?
+[02:00] AGENT: Connecting you to a representative. Please wait.
+[02:03] PATIENT: Thank you!
+[02:07] AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:09] PATIENT: Goodbye, and thank you for your help!
