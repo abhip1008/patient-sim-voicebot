@@ -1,28 +1,27 @@
 # Patient Simulator Voice Bot
 
-An automated voice bot that places real phone calls to a live AI agent, role-plays
-realistic patient scenarios (scheduling, refills, insurance questions, edge cases), records
-and transcribes each conversation, and surfaces bugs in the agent's behavior.
+This bot calls Pretty Good AI's test line, pretends to be a patient, and tries to find bugs
+in their phone agent. It actually holds a conversation (it listens, thinks, and talks back),
+records both sides, writes a transcript, and then I go through those to see where the agent
+slips up.
 
-Built for the Pretty Good AI — AI Engineering Challenge.
+Built for the Pretty Good AI engineering challenge.
 
-## What it does
+## How it works (short version)
 
-- Places outbound calls to a single test number using Twilio.
-- Holds a natural, real-time voice conversation as a "patient" (Deepgram STT → GPT-4o →
-  Cartesia TTS over a Twilio Media Stream, orchestrated with Pipecat).
-- Records both sides of every call (mp3/ogg) and writes labeled, timestamped transcripts.
-- Runs a catalog of ~15 designed test scenarios, each with a goal and a bug hypothesis.
-- Analyzes transcripts to produce a verified bug report.
+The call goes out through Twilio. The audio runs through a Pipecat pipeline: Deepgram turns
+the agent's speech into text, GPT-4o decides what the "patient" says next, and Cartesia
+speaks it back. Silero handles turn-taking so the bot waits its turn instead of talking over
+the agent. Every call is recorded and transcribed automatically.
 
-See `ARCHITECTURE.md` for how it works and why, and `BUG_REPORT.md` for findings.
+There's a fuller writeup of the design choices in `ARCHITECTURE.md`, and the bugs I found are
+in `BUG_REPORT.md`.
 
-## Prerequisites
+## What you need
 
-- Python 3.11+
-- ffmpeg installed and on your PATH
-- ngrok (to expose the local server to Twilio during calls)
-- Accounts / API keys for: Twilio (Voice-enabled number), Deepgram, OpenAI, Cartesia
+- Python 3.11+ (I used 3.13)
+- ffmpeg and ngrok installed
+- API keys for Twilio (with a voice-enabled number), Deepgram, OpenAI, and Cartesia
 
 ## Setup
 
@@ -30,52 +29,59 @@ See `ARCHITECTURE.md` for how it works and why, and `BUG_REPORT.md` for findings
 git clone <your-repo-url>
 cd patient-sim-voicebot
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env             # then edit .env with your real values
-ngrok http 8000                  # put the https URL into .env as PUBLIC_BASE_URL
+cp .env.example .env               # then fill in your keys
 ```
 
-## Run
+You also need to authenticate ngrok once: `ngrok config add-authtoken <your-token>`.
 
-**One command** (starts ngrok, boots the server, places a live call, then cleans up):
+## Running it
+
+Easiest way is one command. It starts ngrok, starts the server, places a call, and cleans up
+after itself:
 
 ```bash
 make demo SCENARIO=happy_path
-# try a harder one:  make demo SCENARIO=closed_day_trap
+make demo SCENARIO=closed_day_trap   # a tougher one
 ```
 
-See all 19 scenarios with `python -m src.scenarios`.
+Run `python -m src.scenarios` to see all 19 patient scenarios.
 
-### Or run the pieces yourself
+If you'd rather run the pieces by hand, use three terminals:
 
 ```bash
-make tunnel                       # terminal 1: start ngrok, put the https URL in .env
-make run                          # terminal 2: start the server
-make call SCENARIO=happy_path     # terminal 3: place one live call
-make campaign                     # or: run the whole batch of scenarios
+make tunnel    # ngrok — then copy the https URL into .env
+make run       # the server
+make call SCENARIO=happy_path
 ```
 
-### Review the results
+To run the whole batch of scenarios at once: `make campaign`.
+
+## Looking at the results
 
 ```bash
-make analyze     # flag candidate bugs from saved transcripts (you verify them)
-make quality     # score how natural each call sounded
+make analyze   # GPT flags likely bugs in the transcripts (I verify them by hand)
+make quality   # scores how natural each call sounded
 ```
 
-Everything lands under `output/`:
-- `recordings/` — `call-NN.mp3` (both sides, dual-channel)
-- `transcripts/` — `transcript-NN.txt` and `.json` (speaker-labeled, timestamped)
-- `costs.csv`, `campaign.csv`, `quality.json` — run data
+Everything is saved under `output/`:
 
-## Environment variables
+- `recordings/` — the call audio (`call-NN.mp3`, both sides)
+- `transcripts/` — text and json, labeled by speaker with timestamps
+- `costs.csv`, `campaign.csv`, `quality.json` — the run data
 
-All documented in `.env.example`. Never commit `.env`.
+## Results
 
-## Results at a glance
+I ran 14 calls and found 5 real bugs (2 high, 2 medium, 1 low). The whole run cost about
+$1.27. Every call went out from one number, +1 425-287-5599. The headline numbers are in
+`SUMMARY.md`; the detailed findings are in `BUG_REPORT.md`.
 
-- 14 calls, 5 verified bugs (2 High, 2 Medium, 1 Low) — see `BUG_REPORT.md` and `SUMMARY.md`.
-- Total cost for the full run: **~$1.27** (well under $20).
-- All calls placed from a single number: **+1 425-287-5599**.
-- This project used AI throughout development — including verifying every AI-flagged bug by
-  hand. See the Loom walkthroughs in the submission (scripts in `LOOM_SCRIPTS.md`).
+Worth saying: I used AI heavily while building this, but I checked every bug it flagged
+myself. A couple of its "bugs" turned out to be quirks of the test line (a transfer that goes
+nowhere, a demo mode that accepts any birthday), not the agent, so I left those out.
+
+## Secrets
+
+Your real keys live in `.env`, which is gitignored and never committed. `.env.example` shows
+which variables you need.
