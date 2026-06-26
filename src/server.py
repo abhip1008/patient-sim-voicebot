@@ -34,11 +34,18 @@ async def health() -> dict:
 
 @app.post("/twiml")
 async def twiml(request: Request) -> Response:
-    """Twilio fetches this on connect. <Connect><Stream> opens the live audio pipe."""
+    """Twilio fetches this on connect. <Connect><Stream> opens the live audio pipe.
+
+    The chosen scenario id (from ?scenario=...) is forwarded to the WebSocket as a
+    Twilio <Parameter>, so the bot knows which patient to role-play for this call.
+    """
+    scenario = request.query_params.get("scenario", "")
+    param_tag = f'\n      <Parameter name="scenario" value="{scenario}"/>' if scenario else ""
     body = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Connect>
-    <Stream url="{_wss_url()}"/>
+    <Stream url="{_wss_url()}">{param_tag}
+    </Stream>
   </Connect>
 </Response>"""
     return Response(content=body, media_type="application/xml")

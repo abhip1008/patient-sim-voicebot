@@ -18,6 +18,8 @@ from fastapi import WebSocket
 from loguru import logger
 
 from .config import Settings
+from .persona import build_system_prompt
+from .scenarios import get_scenario
 
 from pipecat.audio.vad.silero import SileroVADAnalyzer
 from pipecat.audio.vad.vad_analyzer import VADParams
@@ -41,24 +43,17 @@ from pipecat.transports.websocket.fastapi import (
 # serializer's mulaw <-> PCM conversion is the only audio transform that happens.
 SAMPLE_RATE = 8000
 
-# Minimal Phase 3 persona. Phase 4 replaces this with rich, scenario-driven personas.
-DEFAULT_SYSTEM_PROMPT = (
-    "You are a patient calling a medical clinic to book a routine checkup next week. "
-    "You are a real person on a phone call, never reveal that you are an AI. "
-    "Speak naturally and keep every reply to one or two short sentences. "
-    "Wait for the receptionist to respond; do not monologue. "
-    "When your appointment is booked or the call is clearly done, thank them and say goodbye."
-)
-
-
-async def read_twilio_handshake(websocket: WebSocket) -> tuple[str, str | None]:
-    """Read Twilio's first two WS messages ('connected', 'start') to get the stream ids."""
+async def read_twilio_handshake(websocket: WebSocket) -> tuple[str, str | None, dict]:
+    """Read Twilio's first two WS messages ('connected', 'start') to get stream ids + params."""
     await websocket.receive_text()  # "connected" event — ignore
     start = json.loads(await websocket.receive_text())  # "start" event
     stream_sid = start["start"]["streamSid"]
     call_sid = start["start"].get("callSid")
-    logger.info(f"Twilio stream started: stream_sid={stream_sid} call_sid={call_sid}")
-    return stream_sid, call_sid
+    custom = start["start"].get("customParameters", {}) or {}
+    logger.info(
+        f"Twilio stream started: stream_sid={stream_sid} call_sid={call_sid} params={custom}"
+    )
+    return stream_sid, call_sid, custom
 
 
 def build_pipeline_task(
@@ -66,7 +61,7 @@ def build_pipeline_task(
     stream_sid: str,
     call_sid: str | None,
     settings: Settings,
-    system_prompt: str = DEFAULT_SYSTEM_PROMPT,
+    system_prompt: str,
 ) -> PipelineTask:
     """Assemble the full STT -> LLM -> TTS pipeline for one call."""
     serializer = TwilioFrameSerializer(
@@ -163,10 +158,15 @@ def build_pipeline_task(
 async def run_bot(
     websocket: WebSocket,
     settings: Settings,
-    system_prompt: str = DEFAULT_SYSTEM_PROMPT,
+    scenario_id: str | None = None,
 ) -> None:
-    """Entry point: handshake with Twilio, build the pipeline, run it to completion."""
-    stream_sid, call_sid = await read_twilio_handshake(websocket)
+    """Entry point: handshake with Twilio, pick the scenario, build the pipeline, run it."""
+    stream_sid, call_sid, custom = await read_twilio_handshake(websocket)
+    # Scenario can come from the TwiML <Parameter> (campaign) or the function arg (fallback).
+    chosen = custom.get("scenario") or scenario_id
+    scenario = get_scenario(chosen)
+    logger.info(f"Running scenario: {scenario.id} — {scenario.title}")
+    system_prompt = build_system_prompt(scenario)
     task = build_pipeline_task(websocket, stream_sid, call_sid, settings, system_prompt)
     runner = PipelineRunner(handle_sigint=False)  # not on the main thread under uvicorn
     await runner.run(task)

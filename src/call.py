@@ -55,7 +55,10 @@ def place_call(scenario: str | None = None, use_server: bool = False, wait: bool
     )
     if use_server:
         base_url = require_public_base_url(settings)
-        kwargs["url"] = f"{base_url}/twiml"
+        twiml_url = f"{base_url}/twiml"
+        if scenario:
+            twiml_url += f"?scenario={scenario}"
+        kwargs["url"] = twiml_url
         kwargs["method"] = "POST"
         kwargs["status_callback"] = f"{base_url}/status"
         kwargs["status_callback_event"] = ["initiated", "ringing", "answered", "completed"]
