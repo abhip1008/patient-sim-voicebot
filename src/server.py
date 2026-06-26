@@ -1,16 +1,18 @@
 """FastAPI app Twilio talks to during a call.
 
-PHASE 2 (current): a /twiml route that tells Twilio to speak a fixed greeting and
-hold the line briefly so we capture the agent's voice on the recording. This proves
-the whole telephony path (dial -> connect -> audio -> record) works before we add AI.
-
-The live Media Stream WebSocket + Pipecat pipeline arrive in PHASE 3.
+PHASE 3: /twiml tells Twilio to open a bidirectional Media Stream to our /ws
+WebSocket, where the Pipecat pipeline runs the live conversation. The Phase 2
+inline-greeting path still lives in call.py for quick telephony tests.
 """
 
 from __future__ import annotations
 
-from fastapi import FastAPI, Request, Response
+from urllib.parse import urlparse
 
+from fastapi import FastAPI, Request, Response, WebSocket
+from loguru import logger
+
+from .bot import run_bot
 from .config import load_settings
 
 # Validate the environment once, at startup (fails loudly if a key is missing).
@@ -18,37 +20,45 @@ settings = load_settings()
 
 app = FastAPI(title="Patient Simulator Voice Bot")
 
-# Phase 2 fixed greeting — no AI yet. Just proves audio flows and gets recorded.
-GREETING = (
-    "Hello, this is a test call from a patient simulator. "
-    "I'm just checking that this connection works. Thank you."
-)
+
+def _wss_url() -> str:
+    """Turn the public https base URL into the wss:// URL Twilio streams audio to."""
+    host = urlparse(settings.public_base_url).netloc
+    return f"wss://{host}/ws"
 
 
 @app.get("/health")
 async def health() -> dict:
-    """Simple liveness check so we can confirm the server is up via the browser/curl."""
-    return {"ok": True, "phase": 2}
+    return {"ok": True, "phase": 3}
 
 
 @app.post("/twiml")
 async def twiml(request: Request) -> Response:
-    """Twilio fetches this when the call connects. We tell it what to do.
-
-    <Say>   speaks our greeting into the call (the agent hears it).
-    <Pause> holds the line so the agent's own greeting is captured on the recording.
-    """
+    """Twilio fetches this on connect. <Connect><Stream> opens the live audio pipe."""
     body = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Say>{GREETING}</Say>
-  <Pause length="12"/>
+  <Connect>
+    <Stream url="{_wss_url()}"/>
+  </Connect>
 </Response>"""
     return Response(content=body, media_type="application/xml")
 
 
+@app.websocket("/ws")
+async def media_stream(websocket: WebSocket) -> None:
+    """The Twilio Media Stream connects here; we run the conversation pipeline on it."""
+    await websocket.accept()
+    logger.info("WebSocket accepted — starting bot.")
+    try:
+        await run_bot(websocket, settings)
+    except Exception:  # noqa: BLE001 — log full traceback, don't crash the server
+        logger.exception("Bot run failed")
+    finally:
+        logger.info("WebSocket handler finished.")
+
+
 @app.post("/status")
 async def status_callback(request: Request) -> Response:
-    """Twilio posts call lifecycle events here so we can see what happened in the logs."""
     form = await request.form()
     print(
         f"[call status] sid={form.get('CallSid')} "
