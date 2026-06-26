@@ -7,9 +7,13 @@ Run before a campaign so you catch a bad key or a broken setup early:
 
 from __future__ import annotations
 
+import os
 import sys
 import urllib.error
 import urllib.request
+
+# Allow running as `python scripts/healthcheck.py` from the repo root.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import load_settings  # importing also applies the SSL cert fix
 
