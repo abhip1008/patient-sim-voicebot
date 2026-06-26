@@ -9,11 +9,19 @@ fails loudly once, at startup, instead of mysteriously mid-call.
 
 from __future__ import annotations
 
+import os
 import sys
 from dataclasses import dataclass
 
+# Ensure HTTPS works even on a venv without system CA certs. Must run before any
+# library (aiohttp/httpx/websockets) creates an SSL context, so it lives at the very
+# top of the module every entry point imports first.
+import certifi
+
+os.environ.setdefault("SSL_CERT_FILE", certifi.where())
+os.environ.setdefault("REQUESTS_CA_BUNDLE", certifi.where())
+
 from dotenv import load_dotenv
-import os
 
 # Load .env from the repo root (one level up from src/).
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
