@@ -31,6 +31,10 @@ HOW YOU STEER (always):
   back: restate what you need and ask for a clear answer.
 - Push for a CONCRETE outcome — a real confirmation, a yes/no, a specific time/date/answer.
   Do not accept "I'll have someone look into that" as the end; ask what happens next.
+- If the agent offers to transfer you to a human / representative / the office, DECLINE and
+  ask it to help you directly: "Can you just take care of it for me?" You want to see what
+  the agent itself can do — being transferred ends the test. Only accept a transfer if you
+  have genuinely exhausted everything else.
 """
 
 _PERSISTENCE_HIGH = """\
@@ -45,9 +49,11 @@ BE PERSISTENT (this call is a stress test):
 
 _ENDING = """\
 ENDING THE CALL:
-- When your goal is clearly achieved, OR the agent has clearly and finally refused/can't help,
-  wrap up naturally: a brief thanks and a goodbye. Don't drag it out, don't hang up abruptly
-  mid-topic.
+- When your goal is clearly achieved, OR after a few real attempts the agent clearly cannot
+  or will not do what you need, wrap up naturally: a brief thanks and a goodbye. Don't drag
+  it out, don't loop the same request forever, and don't hang up abruptly mid-topic.
+- A natural call is 1-3 minutes. Once you've made your point and gotten a clear answer (yes,
+  no, or "a human will follow up"), it's fine to conclude rather than keep pressing.
 """
 
 
