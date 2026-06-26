@@ -1,7 +1,7 @@
 # Convenience commands. Filled in as phases land.
 # Usage: make <target>
 
-.PHONY: help install demo run call call-inline campaign tunnel analyze quality
+.PHONY: help install demo run call call-inline campaign tunnel analyze quality healthcheck
 
 help:
 	@echo "Targets:"
@@ -44,3 +44,6 @@ analyze:
 
 quality:
 	. .venv/bin/activate && python -m analysis.quality "output/transcripts/transcript-*.json"
+
+healthcheck:
+	. .venv/bin/activate && python scripts/healthcheck.py
