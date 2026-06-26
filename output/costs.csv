@@ -1,0 +1,1 @@
+call_id,scenario,timestamp,duration_sec,twilio_usd,stt_usd,llm_usd,tts_usd,total_usd

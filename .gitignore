@@ -1,0 +1,25 @@
+# Secrets — NEVER commit
+.env
+*.env
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Bulky raw audio (we commit the final mp3/ogg under output/recordings, not raw wav)
+*.wav
+output/raw/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# ngrok
+ngrok.log

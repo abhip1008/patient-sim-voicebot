@@ -1,0 +1,11 @@
+# Core — finalized in Phase 1 (exact Pipecat extras confirmed against current version then)
+pipecat-ai
+fastapi
+uvicorn[standard]
+twilio
+python-dotenv
+pydub
+
+# Service SDKs are pulled in via Pipecat extras (Deepgram STT, OpenAI LLM, Cartesia TTS).
+# Phase 1 will pin the exact extras syntax, e.g.:
+#   pipecat-ai[deepgram,openai,cartesia,silero]
