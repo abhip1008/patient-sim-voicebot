@@ -38,26 +38,44 @@ ngrok http 8000                  # put the https URL into .env as PUBLIC_BASE_UR
 
 ## Run
 
-> [CONFIRM ACTUAL COMMANDS AFTER BUILDING — this is graded as "single command after setup".]
+**One command** (starts ngrok, boots the server, places a live call, then cleans up):
 
 ```bash
-make run                          # start the FastAPI server
-make call SCENARIO=happy_path     # place a single test call
-make campaign                     # run the full batch of calls
+make demo SCENARIO=happy_path
+# try a harder one:  make demo SCENARIO=closed_day_trap
 ```
 
-Outputs:
-- `output/recordings/` — `call-NN.mp3` / `.ogg`
-- `output/transcripts/` — `transcript-NN.txt` and `.json`
-- `output/costs.csv` — per-call cost estimate
+See all 19 scenarios with `python -m src.scenarios`.
+
+### Or run the pieces yourself
+
+```bash
+make tunnel                       # terminal 1: start ngrok, put the https URL in .env
+make run                          # terminal 2: start the server
+make call SCENARIO=happy_path     # terminal 3: place one live call
+make campaign                     # or: run the whole batch of scenarios
+```
+
+### Review the results
+
+```bash
+make analyze     # flag candidate bugs from saved transcripts (you verify them)
+make quality     # score how natural each call sounded
+```
+
+Everything lands under `output/`:
+- `recordings/` — `call-NN.mp3` (both sides, dual-channel)
+- `transcripts/` — `transcript-NN.txt` and `.json` (speaker-labeled, timestamped)
+- `costs.csv`, `campaign.csv`, `quality.json` — run data
 
 ## Environment variables
 
 All documented in `.env.example`. Never commit `.env`.
 
-## Notes
+## Results at a glance
 
-- Estimated total cost for the full run: [FILL IN from output/costs.csv] — under $20.
-- All test calls were placed from a single number: [YOUR E.164 NUMBER].
-- This project uses AI tooling throughout development; see the Loom walkthroughs in the
-  submission.
+- 14 calls, 5 verified bugs (2 High, 2 Medium, 1 Low) — see `BUG_REPORT.md` and `SUMMARY.md`.
+- Total cost for the full run: **~$1.27** (well under $20).
+- All calls placed from a single number: **+1 425-287-5599**.
+- This project used AI throughout development — including verifying every AI-flagged bug by
+  hand. See the Loom walkthroughs in the submission (scripts in `LOOM_SCRIPTS.md`).

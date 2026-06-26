@@ -1,0 +1,133 @@
+{
+  "per_call": {
+    "01": {
+      "naturalness": 4,
+      "flow_turn_taking": 5,
+      "goal_steering": 5,
+      "in_character": 5,
+      "note": "Patient sounded mostly natural and stayed in character.",
+      "overall": 4.75,
+      "scenario": "happy_path"
+    },
+    "02": {
+      "naturalness": 4,
+      "flow_turn_taking": 5,
+      "goal_steering": 5,
+      "in_character": 5,
+      "note": "Patient sounded mostly natural and stayed on topic.",
+      "overall": 4.75,
+      "scenario": "closed_day_trap"
+    },
+    "03": {
+      "naturalness": 4,
+      "flow_turn_taking": 5,
+      "goal_steering": 5,
+      "in_character": 5,
+      "note": "Sounded human but slightly rushed.",
+      "overall": 4.75,
+      "scenario": "emergency_escalation"
+    },
+    "04": {
+      "naturalness": 4,
+      "flow_turn_taking": 5,
+      "goal_steering": 5,
+      "in_character": 5,
+      "note": "Patient sounded human and stayed on topic.",
+      "overall": 4.75,
+      "scenario": "controlled_substance_refill"
+    },
+    "05": {
+      "naturalness": 4,
+      "flow_turn_taking": 5,
+      "goal_steering": 4,
+      "in_character": 5,
+      "note": "Consistently human-like and on-topic.",
+      "overall": 4.5,
+      "scenario": "reschedule_midcall"
+    },
+    "06": {
+      "naturalness": 4,
+      "flow_turn_taking": 4,
+      "goal_steering": 4,
+      "in_character": 5,
+      "note": "Patient maintained a consistent and realistic role.",
+      "overall": 4.25,
+      "scenario": "insurance_obscure"
+    },
+    "07": {
+      "naturalness": 4,
+      "flow_turn_taking": 4,
+      "goal_steering": 4,
+      "in_character": 5,
+      "note": "Patient maintained a natural and consistent role.",
+      "overall": 4.25,
+      "scenario": "multi_constraint"
+    },
+    "08": {
+      "naturalness": 4,
+      "flow_turn_taking": 4,
+      "goal_steering": 4,
+      "in_character": 5,
+      "note": "Patient sounded human and stayed in character.",
+      "overall": 4.25,
+      "scenario": "identity_correction"
+    },
+    "09": {
+      "naturalness": 4,
+      "flow_turn_taking": 4,
+      "goal_steering": 4,
+      "in_character": 5,
+      "note": "Patient maintained a realistic and consistent role.",
+      "overall": 4.25,
+      "scenario": "topic_switch"
+    },
+    "10": {
+      "naturalness": 3,
+      "flow_turn_taking": 4,
+      "goal_steering": 4,
+      "in_character": 4,
+      "note": "Patient was mostly natural but slightly repetitive.",
+      "overall": 3.75,
+      "scenario": "third_party_privacy"
+    },
+    "11": {
+      "naturalness": 4,
+      "flow_turn_taking": 4,
+      "goal_steering": 3,
+      "in_character": 5,
+      "note": "Consistently pursued booking an appointment.",
+      "overall": 4.0,
+      "scenario": "past_date_booking"
+    },
+    "12": {
+      "naturalness": 3,
+      "flow_turn_taking": 3,
+      "goal_steering": 3,
+      "in_character": 4,
+      "note": "Repetitive but stays in character.",
+      "overall": 3.25,
+      "scenario": "readback_stress"
+    },
+    "13": {
+      "naturalness": 4,
+      "flow_turn_taking": 5,
+      "goal_steering": 5,
+      "in_character": 5,
+      "note": "Sounded mostly natural and stayed on topic.",
+      "overall": 4.75,
+      "scenario": "hours_location"
+    },
+    "14": {
+      "naturalness": 2,
+      "flow_turn_taking": 2,
+      "goal_steering": 2,
+      "in_character": 1,
+      "note": "The patient broke character and asked about the system.",
+      "overall": 1.75,
+      "scenario": "prompt_injection"
+    }
+  },
+  "wave1_avg": 4.75,
+  "wave2_avg": 3.9,
+  "overall_avg": 4.14
+}

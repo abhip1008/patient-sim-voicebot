@@ -1,7 +1,5 @@
 # Architecture
 
-> Draft — confirm the bracketed items after building, then delete this note.
-
 ## How it works
 
 This is a patient-simulator voice bot that places real outbound phone calls to a live AI
@@ -47,4 +45,9 @@ hundred milliseconds of latency.
 
 ## What I'd do with more time
 
-[Fill in 1–2 honest items after building.]
+- **A/B the cascaded pipeline against a speech-to-speech model** (e.g. OpenAI Realtime) on the
+  same scenarios, and write up the latency/naturalness/controllability tradeoff with numbers.
+- **Auto-score every call's conversation quality** over time to track naturalness across runs
+  (a first version of this already ships — see `analysis/quality.py`).
+- **Grow the scenario catalog** with more multi-constraint and multilingual edge cases, and add
+  automatic reproduction runs for any newly found bug.
