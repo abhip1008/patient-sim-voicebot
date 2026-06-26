@@ -12,3 +12,7 @@ twilio
 # Config + audio post-processing
 python-dotenv
 pydub
+
+# CA bundle for TLS verification (used explicitly in src/config.py to fix
+# "CERTIFICATE_VERIFY_FAILED" in venvs that can't see the system CA store)
+certifi

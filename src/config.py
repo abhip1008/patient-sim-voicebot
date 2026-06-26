@@ -13,19 +13,29 @@ import os
 import sys
 from dataclasses import dataclass
 
-# Ensure HTTPS works even on a venv without system CA certs. Must run before any
-# library (aiohttp/httpx/websockets) creates an SSL context, so it lives at the very
-# top of the module every entry point imports first.
-import certifi
-
-os.environ.setdefault("SSL_CERT_FILE", certifi.where())
-os.environ.setdefault("REQUESTS_CA_BUNDLE", certifi.where())
-
 from dotenv import load_dotenv
 
 # Load .env from the repo root (one level up from src/).
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv(os.path.join(_REPO_ROOT, ".env"))
+
+# --- TLS / CA bundle fix (macOS venv) -------------------------------------
+# A Python installed/used inside a venv often can't find the system CA store,
+# so HTTPS calls fail with "CERTIFICATE_VERIFY_FAILED: unable to get local
+# issuer certificate" even though normal HTTPS works fine on the machine.
+# Point OpenSSL (stdlib `ssl`, used by httpx/aiohttp/websockets) and `requests`
+# at certifi's bundled roots. setdefault keeps any value you set deliberately.
+# Importing config first thus makes every downstream HTTPS client work.
+try:
+    import certifi
+
+    os.environ.setdefault("SSL_CERT_FILE", certifi.where())
+    os.environ.setdefault("REQUESTS_CA_BUNDLE", certifi.where())
+except ImportError:
+    # certifi ships as a transitive dependency; if it's somehow absent we leave
+    # the environment untouched rather than crash at import.
+    pass
+# --------------------------------------------------------------------------
 
 # The ONLY number this project is permitted to call (challenge hard rule).
 ALLOWED_TARGET_NUMBER = "+18054398008"
