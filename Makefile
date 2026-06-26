@@ -5,11 +5,12 @@
 
 help:
 	@echo "Targets:"
-	@echo "  install   - create venv and install requirements (Phase 1)"
-	@echo "  tunnel    - start ngrok on port 8000 (Phase 2)"
-	@echo "  run       - start the FastAPI server (Phase 2)"
-	@echo "  call      - place a single test call: make call SCENARIO=happy_path (Phase 2+)"
-	@echo "  campaign  - run the full batch of calls (Phase 8)"
+	@echo "  install      - create venv and install requirements"
+	@echo "  tunnel       - start ngrok on port 8000 (run in its own terminal)"
+	@echo "  run          - start the FastAPI server (run in its own terminal)"
+	@echo "  call         - live conversation call:  make call SCENARIO=happy_path"
+	@echo "  call-inline  - quick telephony test (fixed greeting, no AI, no server needed)"
+	@echo "  campaign     - run the full batch of calls (Phase 8)"
 
 install:
 	python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
@@ -20,8 +21,13 @@ tunnel:
 run:
 	. .venv/bin/activate && uvicorn src.server:app --port 8000 --reload
 
+# Live conversation: needs `make tunnel` + `make run` going first (server + ngrok).
 call:
-	. .venv/bin/activate && python -m src.call --scenario $(SCENARIO)
+	. .venv/bin/activate && python -m src.call --server --scenario $(SCENARIO)
+
+# Quick telephony smoke test: dials, speaks a fixed line, records. No server/ngrok needed.
+call-inline:
+	. .venv/bin/activate && python -m src.call
 
 campaign:
 	. .venv/bin/activate && python -m runner.campaign
