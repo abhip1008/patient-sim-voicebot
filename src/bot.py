@@ -19,7 +19,10 @@ from loguru import logger
 
 from .config import Settings
 from .persona import build_system_prompt
-from .scenarios import get_scenario
+from .scenarios import Scenario, get_scenario
+from .transcripts import TranscriptCollector, write_transcript
+
+TRANSCRIPTS_DIR = "output/transcripts"
 
 from pipecat.audio.vad.silero import SileroVADAnalyzer
 from pipecat.audio.vad.vad_analyzer import VADParams
@@ -61,7 +64,7 @@ def build_pipeline_task(
     stream_sid: str,
     call_sid: str | None,
     settings: Settings,
-    system_prompt: str,
+    scenario: Scenario,
 ) -> PipelineTask:
     """Assemble the full STT -> LLM -> TTS pipeline for one call."""
     serializer = TwilioFrameSerializer(
@@ -118,7 +121,9 @@ def build_pipeline_task(
         settings=CartesiaTTSService.Settings(model="sonic-2", voice=settings.tts_voice_id),
     )
 
-    context = LLMContext(messages=[{"role": "system", "content": system_prompt}])
+    context = LLMContext(
+        messages=[{"role": "system", "content": build_system_prompt(scenario)}]
+    )
     aggregators = LLMContextAggregatorPair(context)
 
     pipeline = Pipeline(
@@ -134,6 +139,7 @@ def build_pipeline_task(
         ]
     )
 
+    collector = TranscriptCollector()
     task = PipelineTask(
         pipeline,
         params=PipelineParams(
@@ -141,7 +147,10 @@ def build_pipeline_task(
             audio_out_sample_rate=SAMPLE_RATE,
             enable_metrics=True,
         ),
+        observers=[collector],
     )
+
+    label = f"transcript-{call_sid}" if call_sid else f"transcript-{stream_sid}"
 
     @transport.event_handler("on_client_connected")
     async def _on_connected(_transport, _client):
@@ -149,7 +158,22 @@ def build_pipeline_task(
 
     @transport.event_handler("on_client_disconnected")
     async def _on_disconnected(_transport, _client):
-        logger.info("Client disconnected — ending pipeline.")
+        logger.info("Client disconnected — writing transcript and ending pipeline.")
+        try:
+            txt, _ = write_transcript(
+                collector,
+                TRANSCRIPTS_DIR,
+                label,
+                metadata={
+                    "scenario": scenario.id,
+                    "title": scenario.title,
+                    "call_sid": call_sid or "",
+                    "turns": len(collector.turns),
+                },
+            )
+            logger.info(f"Transcript written: {txt} ({len(collector.turns)} turns)")
+        except Exception:  # noqa: BLE001
+            logger.exception("Failed writing transcript")
         await task.queue_frames([EndFrame()])
 
     return task
@@ -166,7 +190,6 @@ async def run_bot(
     chosen = custom.get("scenario") or scenario_id
     scenario = get_scenario(chosen)
     logger.info(f"Running scenario: {scenario.id} — {scenario.title}")
-    system_prompt = build_system_prompt(scenario)
-    task = build_pipeline_task(websocket, stream_sid, call_sid, settings, system_prompt)
+    task = build_pipeline_task(websocket, stream_sid, call_sid, settings, scenario)
     runner = PipelineRunner(handle_sigint=False)  # not on the main thread under uvicorn
     await runner.run(task)

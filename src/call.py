@@ -22,6 +22,9 @@ import time
 from twilio.rest import Client
 
 from .config import load_settings, require_public_base_url
+from .recording import fetch_recording
+
+RECORDINGS_DIR = "output/recordings"
 
 # Phase 2 fixed greeting — no AI yet. Proves audio flows to the agent and gets recorded.
 GREETING = (
@@ -78,7 +81,12 @@ def place_call(scenario: str | None = None, use_server: bool = False, wait: bool
 
     if wait:
         _poll_until_done(client, call.sid)
-        _show_recordings(client, call.sid)
+        label = f"call-{call.sid}"
+        path = fetch_recording(client, settings, call.sid, RECORDINGS_DIR, label, also_ogg=False)
+        if path:
+            print(f"\nRecording saved: {path}")
+        else:
+            print("\nNo recording yet — check the Twilio console.")
 
     return call.sid
 
@@ -98,20 +106,6 @@ def _poll_until_done(client: Client, sid: str, timeout_s: int = 90) -> None:
             return
         time.sleep(2)
     print("  (stopped watching after timeout; check the Twilio console)")
-
-
-def _show_recordings(client: Client, sid: str) -> None:
-    """List any recordings produced for this call (may take a few seconds to appear)."""
-    print("\nLooking for recordings (waiting a few seconds for Twilio to finalize)...")
-    for _ in range(6):
-        recs = client.recordings.list(call_sid=sid, limit=5)
-        if recs:
-            for r in recs:
-                print(f"  recording: SID={r.sid} duration={r.duration}s channels={r.channels}")
-                print(f"  media URL: https://api.twilio.com{r.uri.replace('.json', '.mp3')}")
-            return
-        time.sleep(3)
-    print("  No recording yet — it may still be processing; check the Twilio console.")
 
 
 if __name__ == "__main__":
